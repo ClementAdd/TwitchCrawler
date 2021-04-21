@@ -1,0 +1,16 @@
+{
+  "name": "web-crawler",
+  "version": "0.0.0",
+  "main": "crawler.js",
+  "homepage": "https://git.ytrack.learn.ynov.com/MPHERON/web-crawler",
+  "contributors": [
+    "Clement Adarrio",
+    "Brahim Ganoui",
+    "Mathieu PHERON"
+  ],
+  "dependencies": {
+    "cheerio": "1.0.0-rc.6",
+    "url-parse": "1.5.1",
+    "request": "2.88.2"
+  }
+}
