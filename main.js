@@ -4,7 +4,7 @@ const puppeteer = require('puppeteer');
     const browser = await puppeteer.launch({ headless: false });
     const page = await browser.newPage();
 
-    await page.setViewport({ width: 1920, height: 1080 });
+    await page.setViewport({ width: 1366, height: 768 });
     await page.goto('https://duckduckgo.com/');
 
     await page.type('#search_form_input_homepage', 'twitch')
@@ -14,7 +14,11 @@ const puppeteer = require('puppeteer');
     for (let i = 0; i < 12; i++) {
         await page.keyboard.press('Tab');
     }
-    await page.keyboard.press('Enter');  // ACCES A TWITCH DEPUIS DUCKDUCKGO
+    await page.keyboard.press('Enter',{ delay: 5000 });  // ACCES A TWITCH DEPUIS DUCKDUCKGO
+    for (let i = 0; i < 7; i++) {
+        await page.keyboard.press('Tab');
+    }
+    await page.keyboard.press('Enter'); // Accès à 'Parcourir'
     //await browser.close();
 })();
 
