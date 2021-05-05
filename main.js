@@ -67,22 +67,16 @@ const puppeteer = require('puppeteer');
 
     console.log("Top 5 streamer en direct Francais\n");
 
-    for (let i = 1; i <= 5; i++) {
 
-
-        let toPrintSteamer = "streamer" + i.toString();
-        let toPrintTitle = "title" + i.toString();
-        let toPrintCategory = "category" + i.toString();
-        let toPrintViewer = "viewer" + i.toString();
-        console.log(eval(toPrintSteamer), " ==> ", eval(toPrintTitle), " ==> ", eval(toPrintCategory), " ==> ", eval(toPrintViewer));
-    }
-
+    let streamers = []
 
     for (let i = 1; i <= 5; i++) {
-        let streamers = []
-        streamers.push(eval("streamer" + i.toString()), eval("title" + i.toString()), eval("category" + i.toString()), eval("viewer" + i.toString()));
-        console.log(streamers);
+        let streamer = []
+        streamer.push(eval("streamer" + i.toString()), eval("title" + i.toString()), eval("category" + i.toString()), eval("viewer" + i.toString()));
+        streamers.push(streamer)
     }
+
+    console.log(streamers);
 
 
 
