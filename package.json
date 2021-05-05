@@ -1,7 +1,7 @@
 {
   "name": "web-crawler",
   "version": "0.0.0",
-  "main": "crawler.js",
+  "main": "main.js",
   "homepage": "https://git.ytrack.learn.ynov.com/MPHERON/web-crawler",
   "contributors": [
     "Clement Adarrio",
