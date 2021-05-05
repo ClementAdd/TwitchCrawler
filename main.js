@@ -16,7 +16,6 @@ const puppeteer = require('puppeteer');
     await new Promise(r => setTimeout(r, 2000));// delay for load page
     const liveChannel = await page.$x('//*[@id="root"]/div/div[2]/div/main/div[2]/div[3]/div/div/div/div/div[3]/div[1]/div/ul/li[2]/a');
     let clickChannel = liveChannel[0]; // Acess to Chaine Live
-
     if (clickChannel === undefined) {
         const liveChannel2 = await page.$x('//*[@id="root"]/div/div[2]/div/main/div[2]/div[3]/div/div/div/div/div[4]/div[1]/div/ul/li[2]/a');
         await liveChannel2[0].click(); // Acess to Chaine Live
@@ -24,22 +23,18 @@ const puppeteer = require('puppeteer');
         const sortBy = await page.$x('//*[@id="root"]/div/div[2]/div[2]/main/div[2]/div[3]/div/div/div/div/div[4]/div[2]/div[2]/div[2]/div/div[1]/button');
         await sortBy[0].click();// Acces to the sort list
         await new Promise(r => setTimeout(r, 100));// delay for load page
-
         let sortDecrease = await page.$x('//*[@id="root"]/div/div[2]/div[2]/main/div[2]/div[3]/div/div/div/div/div[4]/div[2]/div[2]/div[2]/div/div[2]/div/div/div/div/div/div/div[2]/a');
         await sortDecrease[0].click();// Accès à 'chaine Live triés par viewers croissants'
-
     } else {
         await clickChannel.click();
         await new Promise(r => setTimeout(r, 2000));// delay for load page
         const sortBy = await page.$x('//*[@id="root"]/div/div[2]/div/main/div[2]/div[3]/div/div/div/div/div[3]/div[2]/div[2]/div[2]/div/div[1]/button');
         await sortBy[0].click();// Acces to the sort list
         await new Promise(r => setTimeout(r, 100));// delay for load page
-
         let sortDecrease = await page.$x('//*[@id="root"]/div/div[2]/div/main/div[2]/div[3]/div/div/div/div/div[3]/div[2]/div[2]/div[2]/div/div[2]/div/div/div/div/div/div/div[2]/a');
         await sortDecrease[0].click();// Accès à 'chaine Live triés par viewers croissants'
     }
     await new Promise(r => setTimeout(r, 50));// delay for load page
-
 
     const streamer1 = "https://www.twitch.tv/" + await page.evaluate(() => document.querySelector("#root > div > div.tw-flex.tw-flex-column.tw-flex-nowrap.tw-full-height > div.tw-flex.tw-flex-nowrap.tw-full-height.tw-overflow-hidden.tw-relative > main > div.root-scrollable.scrollable-area > div.simplebar-scroll-content > div > div > div > div > div.tw-pd-b-3.tw-pd-t-2 > div > div:nth-child(1) > div:nth-child(1) > div.ScTower-sc-1dei8tr-0.hRbnOC.tw-tower > div:nth-child(1) > div > div > article > div.tw-item-order-2.tw-mg-t-1 > div > div.tw-flex-grow-1.tw-flex-shrink-1.tw-full-width.tw-item-order-2.tw-media-card-meta__text-container > div.tw-media-card-meta__links > div:nth-child(1) > p > a").innerText);
     const streamer2 = "https://www.twitch.tv/" + await page.evaluate(() => document.querySelector("#root > div > div.tw-flex.tw-flex-column.tw-flex-nowrap.tw-full-height > div.tw-flex.tw-flex-nowrap.tw-full-height.tw-overflow-hidden.tw-relative > main > div.root-scrollable.scrollable-area > div.simplebar-scroll-content > div > div > div > div > div.tw-pd-b-3.tw-pd-t-2 > div > div:nth-child(1) > div:nth-child(1) > div.ScTower-sc-1dei8tr-0.hRbnOC.tw-tower > div:nth-child(2) > div > div > article > div.tw-item-order-2.tw-mg-t-1 > div > div.tw-flex-grow-1.tw-flex-shrink-1.tw-full-width.tw-item-order-2.tw-media-card-meta__text-container > div.tw-media-card-meta__links > div:nth-child(1) > p > a").innerText);
@@ -82,5 +77,5 @@ const puppeteer = require('puppeteer');
 
     await browser.close();
 
-   // return viewer1, viewer2, viewer3, viewer4, viewer5;
+    // return viewer1, viewer2, viewer3, viewer4, viewer5;
 })();
