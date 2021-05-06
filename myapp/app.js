@@ -3,8 +3,14 @@ const path = require('path');
 const app = express();
 const port = 80;
 
+const main = require("./main")
+
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, '/index.html'));
+});
+
+app.get('/getStats', async function(req, res) {
+    await main.getStats();
 });
 
 app.listen(port, () => {

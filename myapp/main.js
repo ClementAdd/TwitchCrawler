@@ -1,6 +1,8 @@
 const puppeteer = require('puppeteer');
 
-(async () => {
+
+
+async function getStats(){
     const browser = await puppeteer.launch({headless: false});
     const page = await browser.newPage();
     await page.setViewport({width: 1920, height: 1080});
@@ -17,7 +19,7 @@ const puppeteer = require('puppeteer');
     const liveChannel = await page.$x('//*[@id="root"]/div/div[2]/div/main/div[2]/div[3]/div/div/div/div/div[3]/div[1]/div/ul/li[2]/a');
     let clickChannel = liveChannel[0]; // Acess to Chaine Live
 
-    await new Promise(r => setTimeout(r, 2000));// delay for load page
+    await new Promise(r => setTimeout(r, 4000));// delay for load page
 
     if (clickChannel === undefined) {
         const liveChannel2 = await page.$x('//*[@id="root"]/div/div[2]/div/main/div[2]/div[3]/div/div/div/div/div[4]/div[1]/div/ul/li[2]/a');
@@ -99,4 +101,6 @@ const puppeteer = require('puppeteer');
 
     await browser.close();
 
-})();
+}
+
+module.exports = {getStats}
