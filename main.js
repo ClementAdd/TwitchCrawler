@@ -17,6 +17,8 @@ const puppeteer = require('puppeteer');
     const liveChannel = await page.$x('//*[@id="root"]/div/div[2]/div/main/div[2]/div[3]/div/div/div/div/div[3]/div[1]/div/ul/li[2]/a');
     let clickChannel = liveChannel[0]; // Acess to Chaine Live
 
+    await new Promise(r => setTimeout(r, 2000));// delay for load page
+
     if (clickChannel === undefined) {
         const liveChannel2 = await page.$x('//*[@id="root"]/div/div[2]/div/main/div[2]/div[3]/div/div/div/div/div[4]/div[1]/div/ul/li[2]/a');
         await liveChannel2[0].click(); // Acess to Chaine Live
