@@ -23,7 +23,7 @@ const puppeteer = require('puppeteer');
         await new Promise(r => setTimeout(r, 2000));// delay for load page
         const sortBy = await page.$x('//*[@id="root"]/div/div[2]/div[2]/main/div[2]/div[3]/div/div/div/div/div[4]/div[2]/div[2]/div[2]/div/div[1]/button');
         await sortBy[0].click();// Acces to the sort list
-        await new Promise(r => setTimeout(r, 100));// delay for load page
+        await new Promise(r => setTimeout(r, 2000));// delay for load page
 
         let sortDecrease = await page.$x('//*[@id="root"]/div/div[2]/div[2]/main/div[2]/div[3]/div/div/div/div/div[4]/div[2]/div[2]/div[2]/div/div[2]/div/div/div/div/div/div/div[2]/a');
         await sortDecrease[0].click();// Accès à 'chaine Live triés par viewers croissants'
@@ -31,9 +31,9 @@ const puppeteer = require('puppeteer');
     } else {
         await clickChannel.click();
         await new Promise(r => setTimeout(r, 2000));// delay for load page
-        const sortBy = await page.$x('//*[@id="root"]/div/div[2]/div/main/div[2]/div[3]/div/div/div/div/div[3]/div[2]/div[2]/div[2]/div/div[1]/button');
+        const sortBy = await page.$x('//*[@id="root"]/div/div[2]/div[2]/main/div[2]/div[3]/div/div/div/div/div[3]/div[2]/div[2]/div[2]/div/div[1]/button');
         await sortBy[0].click();// Acces to the sort list
-        await new Promise(r => setTimeout(r, 100));// delay for load page
+        await new Promise(r => setTimeout(r, 2000));// delay for load page
 
         let sortDecrease = await page.$x('//*[@id="root"]/div/div[2]/div/main/div[2]/div[3]/div/div/div/div/div[3]/div[2]/div[2]/div[2]/div/div[2]/div/div/div/div/div/div/div[2]/a');
         await sortDecrease[0].click();// Accès à 'chaine Live triés par viewers croissants'
@@ -95,6 +95,6 @@ const puppeteer = require('puppeteer');
     console.log(streamers);
 
 
-    //await browser.close();
+    await browser.close();
 
 })();
