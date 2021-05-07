@@ -9,6 +9,7 @@
     "Mathieu PHERON"
   ],
   "dependencies": {
+    "axentix": "^1.2.1",
     "express": "^4.17.1",
     "node-fetch": "^2.6.1",
     "puppeteer": "^9.0.0",
