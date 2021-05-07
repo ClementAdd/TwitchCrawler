@@ -5,7 +5,7 @@ async function getStats(){
     const page = await browser.newPage();
     await page.setViewport({width: 1920, height: 1080});
     await page.goto('https://www.twitch.tv/directory/all?sort=VIEWER_COUNT');
-    await new Promise(r => setTimeout(r, 5000));
+    await new Promise(r => setTimeout(r, 3000));
 
     const streamers = await page.$$eval("[data-target='directory-game__card_container']", (streams)=>{
         let streamers = [];
@@ -14,19 +14,20 @@ async function getStats(){
             const nameAndCate = stream.querySelector(".tw-media-card-meta__links").innerText.split(/\n+/);
 
             streamers.push({
+                link: 'https://twitch.tv/' + nameAndCate[0].toLowerCase(),
                 title: stream.querySelector('.tw-media-card-meta__title').innerText,
                 nameStreamer: nameAndCate[0],
-                category: nameAndCate[1],
+                category:   nameAndCate[1],
                 viewers: stream.querySelector('.tw-media-card-stat').innerText,
-                miniature: stream.querySelector('.tw-relative .tw-image').src,
+                miniature: stream.querySelector('.tw-c-text-overlay .tw-image').src,
                 pdp: stream.querySelector('.tw-avatar .tw-image-avatar').src,
             });
         });
-
+        console.log(streamers)
         return streamers;
     })
 
-    await browser.close();
+    //await browser.close();
 
     return streamers
 }
