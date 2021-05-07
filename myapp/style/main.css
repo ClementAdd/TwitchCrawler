@@ -5,3 +5,10 @@ body, p {
     font-family: 'Oswald', sans-serif;
 }
 
+a {
+    text-transform: capitalize;
+}
+
+footer {
+ align-content: center;
+}
