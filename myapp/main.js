@@ -12,9 +12,15 @@ async function getStats(){
         streams.forEach((stream)=>{
 
             const nameAndCate = stream.querySelector(".tw-media-card-meta__links").innerText.split(/\n+/);
+            let name = nameAndCate[0]
+            if(name.indexOf('(') !== -1){
+                name = name.split('(')
+                name = name[1].split(')')
+                name = name[0].replace(',', '')
+            }
 
             streamers.push({
-                link: 'https://twitch.tv/' + nameAndCate[0].toLowerCase(),
+                link: 'https://twitch.tv/' + name,
                 title: stream.querySelector('.tw-media-card-meta__title').innerText,
                 nameStreamer: nameAndCate[0],
                 category:   nameAndCate[1],
@@ -27,9 +33,12 @@ async function getStats(){
         return streamers;
     })
 
-    //await browser.close();
+    await browser.close();
 
     return streamers
 }
+
+
+
 
 module.exports = {getStats}
