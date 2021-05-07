@@ -24,14 +24,15 @@ async function getStats() {
 
 
             streamers.push({
-                link: 'https://twitch.tv/' + name.replaceAll(' ', ''),
-                title: stream.querySelector('.tw-media-card-meta__title').innerText,
-                nameStreamer: nameAndCate[0],
-                category: nameAndCate[1],
-                viewers: stream.querySelector('.tw-media-card-stat').innerText,
-                miniature: stream.querySelector('.tw-c-text-overlay .tw-image').src,
-                pdp: stream.querySelector('.tw-avatar .tw-image-avatar').src,
-            });
+                    link: 'https://twitch.tv/' + name.replaceAll(' ', ''),
+                    title: stream.querySelector('.tw-media-card-meta__title').innerText,
+                    nameStreamer: nameAndCate[0],
+                    category: nameAndCate[1],
+                    viewers: stream.querySelector('.tw-media-card-stat').innerText,
+                    miniature: stream.querySelector('.tw-c-text-overlay .tw-image').src,
+                    pdp: stream.querySelector('.tw-avatar .tw-image-avatar').src,
+                }
+            );
         });
         console.log(streamers)
         return streamers;
