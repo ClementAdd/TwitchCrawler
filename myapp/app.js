@@ -10,6 +10,9 @@
     app.get('/', function (req, res) {
         res.sendFile(path.join(__dirname, './public/index.html'));
     });
+    app.get('/about-us', function (req, res) {
+        res.sendFile(path.join(__dirname, './public/about-us.html'));
+    });
 
     app.get('/streamers', function (req, res) {
         res.send(streamers);
