@@ -9,6 +9,7 @@ async function getStats() {
 
     const streamers = await page.$$eval("[data-target='directory-game__card_container']", (streams) => {
         let streamers = [];
+        streamers.push(new Date().getHours()+":"+ new Date().getMinutes()+":"+ new Date().getSeconds())
         streams.forEach((stream) => {
 
             const nameAndCate = stream.querySelector(".tw-media-card-meta__links").innerText.split(/\n+/);
@@ -18,15 +19,11 @@ async function getStats() {
                 name = name[1].split(')')
                 name = name[0].replace(',', '')
             }
-
-
             name.replace(' ', '')
-
-
             streamers.push({
                     link: 'https://twitch.tv/' + name.replaceAll(' ', ''),
                     title: stream.querySelector('.tw-media-card-meta__title').innerText,
-                    nameStreamer: nameAndCate[0],
+                    nameStreamer: name,
                     category: nameAndCate[1],
                     viewers: stream.querySelector('.tw-media-card-stat').innerText,
                     miniature: stream.querySelector('.tw-c-text-overlay .tw-image').src,
