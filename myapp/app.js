@@ -8,8 +8,9 @@
     let streamers = await main.getStats();
 
     app.get('/', async function (req, res) {
-        streamers = await main.getStats();
+        //streamers = await main.getStats();
         res.sendFile(path.join(__dirname, './public/index.html'));
+
     });
     app.get('/about-us', function (req, res) {
         res.sendFile(path.join(__dirname, './public/about-us.html'));
@@ -19,9 +20,9 @@
         res.send(streamers);
     });
 
-    app.get('/app.css'), function (req, res) {
+    app.get('/app.css', function (req, res) {
         res.sendFile(path.join(__dirname, './style/main.css'));
-    }
+    })
 
 
     app.use((req, res, next) => {
