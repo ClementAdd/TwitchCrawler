@@ -3,10 +3,12 @@
 body, p {
     padding-top: 50px;
     font-family: 'Oswald', sans-serif;
+    align-content: center;
 }
 
 a {
     text-transform: capitalize;
+    color: aqua;
 }
 
 footer {

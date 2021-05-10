@@ -17,10 +17,19 @@
 
     app.get('/streamers', function (req, res) {
         res.send(streamers);
+    });
 
+    app.get('/app.css'), function (req, res) {
+        res.sendFile(path.join(__dirname, './style/main.css'));
+    }
+
+
+    app.use((req, res, next) => {
+        res.status(404).sendFile(path.join(__dirname, './public/404NotFound.html'));
     });
 
     app.listen(port, () => {
         console.log(`Example app listening at http://localhost:${port}`)
     });
+
 })();
