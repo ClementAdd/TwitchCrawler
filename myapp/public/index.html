@@ -15,6 +15,7 @@
         <div class="navbar-menu ml-auto">
             <a class="navbar-link" href="https://git.ytrack.learn.ynov.com/MPHERON/web-crawler" target="_blank">Gitea</a>
             <a class="navbar-link" href="/about-us">About Us</a>
+            <a class="navbar-link" href="/">Reload </a>
         </div>
     </nav>
 </header>
@@ -36,20 +37,20 @@
                     document.body.appendChild(timeGetInfos)
                     for (let i = 1; i <= 30; i++) {
                         document.body.appendChild(document.createElement("br"))
-                        let divStreamer = document.createElement("a")
+                        let divStreamer = document.createElement("div")
                         divStreamer.href = streamers[i].link
                         divStreamer.target = "_blank"
-
                         divStreamer.setAttribute('id', `stream-${i}`);
+                        // divStreamer.className = "card"
                         document.body.appendChild(divStreamer)
 
                         let nameStreamer = document.createElement("div")
                         nameStreamer.textContent = `n°${i} : `+streamers[i].nameStreamer
-                        //nameStreamer.href = streamers[i].title
                         document.getElementById(`stream-${i}`).appendChild(nameStreamer)
 
                         let title = document.createElement("div")
                         title.textContent = streamers[i].title
+                        title.setAttribute('id', `title-${i}`);
                         document.getElementById(`stream-${i}`).appendChild(title)
 
                         let category = document.createElement("div")
