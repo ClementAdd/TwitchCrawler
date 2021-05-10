@@ -9,14 +9,14 @@
     "Mathieu PHERON"
   ],
   "dependencies": {
-    "cheerio": "^1.0.0-rc.6",
+    "axentix": "^1.2.1",
+    "express": "^4.17.1",
     "node-fetch": "^2.6.1",
     "puppeteer": "^9.0.0",
     "puppeteer-core": "^9.0.0",
     "request": "2.88.2",
     "ts-node": "^9.1.1",
-    "typescript": "^4.2.4",
-    "url-parse": "1.5.1"
+    "typescript": "^4.2.4"
   },
   "description": "",
   "scripts": {

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WEB CRAWLER - HOME</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="./myapp/style/main.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/axentix@1.2.1/dist/css/axentix.min.css" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <nav class="navbar shadow-1 primary">
+        <a class="navbar-brand" href="/">Web-Crawler</a>
+        <div class="navbar-menu ml-auto">
+            <a class="navbar-link" href="https://git.ytrack.learn.ynov.com/MPHERON/web-crawler" target="_blank">Gitea</a>
+            <a class="navbar-link" href="/about-us">About Us</a>
+        </div>
+    </nav>
+</header>
+<main>
+    <script>
+
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://localhost:8080/streamers', true);
+
+        xhr.responseType = 'json';
+        xhr.onload = function () {
+            if (xhr.readyState === xhr.DONE) {
+                if (xhr.status === 200) {
+                    let streamers = xhr.response
+                    console.log(streamers);
+                    let timeGetInfos = document.createElement("div")
+                    timeGetInfos.textContent = "Heure de la récupération des données : " + streamers[0];
+                    timeGetInfos.style.fontSize = 24 + 'px'
+                    document.body.appendChild(timeGetInfos)
+                    for (let i = 1; i <= 30; i++) {
+                        document.body.appendChild(document.createElement("br"))
+                        let divStreamer = document.createElement("a")
+                        divStreamer.href = streamers[i].link
+                        divStreamer.target = "_blank"
+
+                        divStreamer.setAttribute('id', `stream-${i}`);
+                        document.body.appendChild(divStreamer)
+
+                        let nameStreamer = document.createElement("div")
+                        nameStreamer.textContent = `n°${i} : `+streamers[i].nameStreamer
+                        //nameStreamer.href = streamers[i].title
+                        document.getElementById(`stream-${i}`).appendChild(nameStreamer)
+
+                        let title = document.createElement("div")
+                        title.textContent = streamers[i].title
+                        document.getElementById(`stream-${i}`).appendChild(title)
+
+                        let category = document.createElement("div")
+                        category.textContent = streamers[i].category
+                        document.getElementById(`stream-${i}`).appendChild(category)
+
+                        let viewer = document.createElement("div")
+                        viewer.textContent = streamers[i].viewers
+                        document.getElementById(`stream-${i}`).appendChild(viewer)
+
+                        let pdp = document.createElement("img")
+                        pdp.src = streamers[i].pdp
+                        document.getElementById(`stream-${i}`).appendChild(pdp)
+
+                        let miniature = document.createElement("img")
+                        miniature.src = streamers[i].miniature
+                        document.getElementById(`stream-${i}`).appendChild(miniature)
+                    }
+                }
+            }
+        };
+        xhr.send(null);
+    </script>
+
+    <p> Hello Guys, it's our Web Crawler!</p>
+
+
+</main>
+
+</body>
+
+</html>
+<!--<script src="myapp/main.js" type="module"> getStats()</script>-->
+<script src="https://cdn.jsdelivr.net/npm/axentix@1.2.1/dist/js/axentix.min.js"></script>
+

@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap');
+
+body, p {
+    padding-top: 50px;
+    font-family: 'Oswald', sans-serif;
+}
+
+a {
+    text-transform: capitalize;
+}
+
+footer {
+ align-content: center;
+}
