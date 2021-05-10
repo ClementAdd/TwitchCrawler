@@ -5,11 +5,6 @@ body, p {
     align-content: center;
 }
 
-a {
-    text-transform: capitalize;
-    color: aqua;
-}
-
-footer {
- align-content: center;
+.text-link {
+    color: red;
 }
