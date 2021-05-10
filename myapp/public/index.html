@@ -36,7 +36,10 @@
                     document.body.appendChild(timeGetInfos)
                     for (let i = 1; i <= 30; i++) {
                         document.body.appendChild(document.createElement("br"))
-                        let divStreamer = document.createElement("div")
+                        let divStreamer = document.createElement("a")
+                        divStreamer.href = streamers[i].link
+                        divStreamer.target = "_blank"
+
                         divStreamer.setAttribute('id', `stream-${i}`);
                         document.body.appendChild(divStreamer)
 
