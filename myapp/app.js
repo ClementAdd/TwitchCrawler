@@ -4,7 +4,7 @@
     const app = express();
     const port = 8080;
 
-    const main = require("./main")
+    const main = require("./main");
     let streamers = await main.getStats();
 
     app.get('/', async function (req, res) {
@@ -33,7 +33,7 @@
     });
 
     app.listen(port, () => {
-        console.log(`Example app listening at http://localhost:${port}`)
+        console.log(`Example app listening at http://localhost:${port}`);
     });
 
 })();

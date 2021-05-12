@@ -5,37 +5,33 @@
     <title>WEB CRAWLER - HOME</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="app.css" rel="stylesheet" type="text/css">
-    <link href="main.css" rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/axentix@1.2.1/dist/css/axentix.min.css" rel="stylesheet">
     <script crossorigin="anonymous" src="https://kit.fontawesome.com/76c060ffb5.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
 </head>
 <body class="viride light-4">
 
 <header>
+
     <nav class="navbar shadow-1 viride dark-3">
-
-        <a class="navbar-brand ml-5" href="/" >Twitch Crawler</a>
-        <a class="navbar-brand fab fa-twitch" href="https://twitch.tv/" style="margin-top: 2px" ></a>
-
-
+        <a class="navbar-brand ml-5" href="/">Twitch Crawler</a>
+        <a class="navbar-brand fab fa-twitch" href="https://twitch.tv/" style="margin-top: 2px"></a>
         <a class="navbar-menu ml-auto fas fa-redo" href="/" style="margin-top: 5px"></a>
         <div class="navbar-menu ml-auto">
             <a class="navbar-link" href="https://git.ytrack.learn.ynov.com/MPHERON/web-crawler"
                target="_blank">Gitea</a>
             <a class="navbar-link" href="/about-us">About Us</a>
         </div>
-
     </nav>
-    </div>
+
 </header>
+
 <main>
+
     <script>
 
         let xhr = new XMLHttpRequest();
         xhr.open('GET', 'http://localhost:8080/streamers', true);
-
         xhr.responseType = 'json';
         xhr.onload = function () {
             if (xhr.readyState === xhr.DONE) {
@@ -52,31 +48,47 @@
                     document.body.append(container)
                     for (let i = 1; i <= 30; i++) {
 
-                        let bigDiv = document.createElement("a")
-                        bigDiv.href = streamers[i].link
-                        bigDiv.target = "_blank"
-                        bigDiv.setAttribute('class', `row-${i}`)
-                        bigDiv.setAttribute('id', `bigDiv`)
-                        container.appendChild(bigDiv)
+                        let cardStream = document.createElement("a")
+                        cardStream.href = streamers[i].link
+                        cardStream.target = "_blank"
+                        cardStream.setAttribute('class', `row-${i}`)
+                        cardStream.setAttribute('id', `bigDiv`)
+                        container.appendChild(cardStream)
 
                         let divStyle = document.createElement("div")
                         divStyle.setAttribute('class', 'col s12 m7')
-                        bigDiv.appendChild(divStyle)
+                        cardStream.appendChild(divStyle)
 
                         let cardContentTop = document.createElement("div")
                         cardContentTop.setAttribute("class", "cardContentTop")
-                        bigDiv.appendChild(cardContentTop)
+                        cardStream.appendChild(cardContentTop)
 
                         let cardImage = document.createElement("div")
                         cardImage.setAttribute('class', 'card-image')
-                        bigDiv.appendChild(cardImage)
+                        cardStream.appendChild(cardImage)
 
                         let position = document.createElement("div")
                         if (i === 1) {
                             // position.textContent = "N°" + `${i}`
                             let firstPlace = document.createElement("img")
-                            firstPlace.src = "myapp/ressources/1st-place-medal-emoji.png"
+                            firstPlace.src = "https://images.emojiterra.com/google/android-nougat/512px/1f947.png"
+                            firstPlace.style.width = "50px"
+                            firstPlace.style.height = "50ppx"
                             cardContentTop.appendChild(firstPlace)
+                        } else if (i === 2) {
+
+                            let secondPlace = document.createElement("img")
+                            secondPlace.src = "https://images.emojiterra.com/google/android-nougat/512px/1f948.png"
+                            secondPlace.style.width = "50px"
+                            secondPlace.style.height = "50ppx"
+                            cardContentTop.appendChild(secondPlace)
+                        } else if (i === 3) {
+
+                            let thirdPlace = document.createElement("img")
+                            thirdPlace.src = "https://images.emojiterra.com/google/android-nougat/512px/1f949.png"
+                            thirdPlace.style.width = "50px"
+                            thirdPlace.style.height = "50ppx"
+                            cardContentTop.appendChild(thirdPlace)
                         } else {
                             position.textContent = "N°" + `${i}`
                             position.style.fontSize = 20 + "px"
@@ -99,7 +111,7 @@
 
                         let cardContent = document.createElement("div")
                         cardContent.setAttribute('class', 'card-content')
-                        bigDiv.appendChild(cardContent)
+                        cardStream.appendChild(cardContent)
 
                         let title = document.createElement("div")
                         title.textContent = streamers[i].title
@@ -117,44 +129,12 @@
                         link.href = streamers[i].link
                         cardContent.appendChild(link)
 
-
-                        // document.body.appendChild(document.createElement("br"))
-                        // let divStreamer = document.createElement("div")
-                        // divStreamer.href = streamers[i].link
-                        // divStreamer.target = "_blank"
-                        // divStreamer.setAttribute('id', `stream-${i}`);
-                        // // divStreamer.className = "card"
-                        // document.body.appendChild(divStreamer)
-                        //
-                        // let nameStreamer = document.createElement("div")
-                        // nameStreamer.textContent = `n°${i} : `+streamers[i].nameStreamer
-                        // document.getElementById(`stream-${i}`).appendChild(nameStreamer)
-                        //
-                        // let title = document.createElement("div")
-                        // title.textContent = streamers[i].title
-                        // title.setAttribute('id', `title-${i}`);
-                        // document.getElementById(`stream-${i}`).appendChild(title)
-                        //
-                        // let category = document.createElement("div")
-                        // category.textContent = streamers[i].category
-                        // document.getElementById(`stream-${i}`).appendChild(category)
-                        //
-                        // let viewer = document.createElement("div")
-                        // viewer.textContent = streamers[i].viewers
-                        // document.getElementById(`stream-${i}`).appendChild(viewer)
-                        //
-                        // let pdp = document.createElement("img")
-                        // pdp.src = streamers[i].pdp
-                        // document.getElementById(`stream-${i}`).appendChild(pdp)
-                        //
-                        // let miniature = document.createElement("img")
-                        // miniature.src = streamers[i].miniature
-                        // document.getElementById(`stream-${i}`).appendChild(miniature)
                     }
                 }
             }
         };
         xhr.send(null);
+
     </script>
 
 </main>
@@ -162,6 +142,6 @@
 </body>
 
 </html>
-<!--<script src="myapp/main.js" type="module"> getStats()</script>-->
+
 <script src="https://cdn.jsdelivr.net/npm/axentix@1.2.1/dist/js/axentix.min.js"></script>
 

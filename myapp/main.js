@@ -9,17 +9,17 @@ async function getStats() {
 
     const streamers = await page.$$eval("[data-target='directory-game__card_container']", (streams) => {
         let streamers = [];
-        streamers.push(new Date().getHours()+":"+ new Date().getMinutes()+":"+ new Date().getSeconds())
+        streamers.push(new Date().getHours()+":"+ new Date().getMinutes()+":"+ new Date().getSeconds());
         streams.forEach((stream) => {
 
             const nameAndCate = stream.querySelector(".tw-media-card-meta__links").innerText.split(/\n+/);
-            let name = nameAndCate[0]
+            let name = nameAndCate[0];
             if (name.indexOf('(') !== -1) {
-                name = name.split('(')
-                name = name[1].split(')')
-                name = name[0].replace(',', '')
+                name = name.split('(');
+                name = name[1].split(')');
+                name = name[0].replace(',', '');
             }
-            name.replace(' ', '')
+            name.replace(' ', '');
             streamers.push({
                     link: 'https://twitch.tv/' + name.replaceAll(' ', ''),
                     title: stream.querySelector('.tw-media-card-meta__title').innerText,
@@ -31,14 +31,14 @@ async function getStats() {
                 }
             );
         });
-        console.log(streamers)
+        console.log(streamers);
         return streamers;
     })
 
     await browser.close();
 
-    return streamers
+    return streamers;
 }
 
 
-module.exports = {getStats}
+module.exports = {getStats};
