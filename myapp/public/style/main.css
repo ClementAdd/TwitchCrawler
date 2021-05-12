@@ -59,6 +59,12 @@ footer {
 
 }
 
+.text-link {
+    color: red;
+    font-size: 150%;
+    font-weight: bold;
+}
+
 .données {
     margin-left: auto !important;
     margin-right: auto !important;
