@@ -11,16 +11,14 @@ a {
 footer {
     align-content: center;
 }
-/*.container {*/
-
-/*}*/
-#container {
+.container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
+
 }
-#cardStream {
+#bigDiv {
     margin-top: 60px !important;
     border-width: 2px;
     border-style:inset;
@@ -32,8 +30,8 @@ footer {
     background-color: darkorchid;
 }
 .cardContentTop {
-    margin-left: auto !important;
-    margin-right: auto !important;
+    /*margin-left: auto !important;*/
+    /*margin-right: auto !important;*/
     /*width: 440px;*/
     display: flex;
     flex-direction: row;
@@ -56,17 +54,9 @@ footer {
     padding: 15px;
 }
 .card-image img {
-    /*margin-left: auto !important;*/
-    /*margin-right: auto !important;*/
+
     width: 100%;
-    /*flex: 1;*/
 
-}
-
-.text-link {
-    color: red;
-    font-weight: bold;
-    font-size: 150%;
 }
 
 .données {
