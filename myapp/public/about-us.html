@@ -4,41 +4,48 @@
     <meta charset="UTF-8">
     <title>WEB CRAWLER - ABOUT US</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="app.css" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/axentix@1.2.1/dist/css/axentix.min.css" rel="stylesheet">
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/76c060ffb5.js"></script>
 </head>
-<body>
+<body class="viride light-4">
+
 <header>
-    <nav class="navbar shadow-1 primary">
-        <a class="navbar-brand" href="/" target="_blank">Web-Crawler</a>
+    <nav class="navbar shadow-1 viride dark-3">
+
+        <a class="navbar-brand ml-5" href="/" >Twitch Crawler</a>
+        <a class="navbar-brand fab fa-twitch" href="https://twitch.tv/" style="margin-top: 2px" ></a>
         <div class="navbar-menu ml-auto">
-            <a class="navbar-link" href="https://git.ytrack.learn.ynov.com/MPHERON/web-crawler">Gitea</a>
+            <a class="navbar-link" href="https://git.ytrack.learn.ynov.com/MPHERON/web-crawler"
+               target="_blank">Gitea</a>
             <a class="navbar-link" href="/about-us">About Us</a>
         </div>
+
     </nav>
-    <div style="text-align: center;">
-
-
-        <h3> Description:</h3>
-
-        This project was created for a school project.<br>
-        This project consists of retrieving some information from a web page.
-        In our case, we recover the top 30 streamers online on the Twitch platform sorted by number of viewers.
-        <br><br><br><br>
-        <h3> Implementation details:</h3>
-
-        We have created a web server in NodeJS.
-        <br>
-        To access to the website, we use Puppeteer which is a Node library, developed by Google which allows you to
-        control an instance of the Chrome Headless browser (Chrome without UI).<br><br><br><br>
-
-
-        <h3> Authors:</h3>
-        Clément Addario, Brahim Gnaoui, Pheron Mathieu.<br><br><br><br>
-
-        <img src="https://media.giphy.com/media/FihMsmKxNdStq/giphy.gif" alt="gifs" width="250"/>
-
-
     </div>
 </header>
+
+<div style="text-align: center;">
+    <h3> Description:</h3>
+
+    This project was created for a school project.<br>
+    This project consists of retrieving some information from a web page.
+    In our case, we recover the top 30 streamers online on the Twitch platform sorted by number of viewers.
+    <br><br><br><br>
+    <h3> Implementation details:</h3>
+
+    We have created a web server in NodeJS.
+    <br>
+    To access to the website, we use Puppeteer which is a Node library, developed by Google which allows you to
+    control an instance of the Chrome Headless browser (Chrome without UI).<br><br><br><br>
+
+
+    <h3> Authors:</h3>
+    Clément Addario, Brahim Gnaoui, Mathieu Pheron .<br><br><br><br>
+
+    <img alt="gifs" src="https://media.giphy.com/media/FihMsmKxNdStq/giphy.gif" width="250"/>
+
+
+</div>
 </body>
 </html>

@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap');
+
+body, p {
+    font-family: 'Oswald', sans-serif;
+}
+
+a {
+    text-transform: capitalize;
+}
+
+footer {
+    align-content: center;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+#bigDiv {
+    margin-top: 60px !important;
+    border-width: 2px;
+    border-style:inset;
+    width: 442px;
+    height: 500px;
+    box-shadow: 10px 5px 5px grey;
+    border-radius: 6px;
+    border-color: darkorchid;
+    background-color: darkorchid;
+}
+.cardContentTop {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 440px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: whitesmoke;
+}
+
+.card-content {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 440px;
+    height: 150px;
+    margin-top: 15px;
+    border-top-width: 4px;
+    border-top-style:inset;
+    border-top-color:whitesmoke;
+    color: white;
+    padding: 15px;
+}
+.card-image {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 440px;
+
+}
+
+.données {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 480px;
+    height: 150px;
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+
