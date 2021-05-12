@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap');
 
 body, p {
-    padding-top: 50px;
     font-family: 'Oswald', sans-serif;
 }
 
@@ -10,5 +9,60 @@ a {
 }
 
 footer {
- align-content: center;
+    align-content: center;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+#bigDiv {
+    margin-top: 60px !important;
+    border-width: 2px;
+    border-style:inset;
+    width: 500px;
+    height: 500px;
+    box-shadow: 10px 5px 5px grey;
+    border-radius: 6px;
+    background-color: darkorchid;
+}
+.cardContentTop {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 440px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: whitesmoke;
+}
+
+.card-content {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 440px;
+    height: 150px;
+    margin-top: 15px;
+    border-top-width: 2px;
+    border-top-style:inset;
+    border-top-color:black;
+    color: white;
+}
+.card-image {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 440px;
+
+}
+
+.données {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 440px;
+    height: 150px;
+    margin-top: 20px;
+    font-size: 24px;
 }

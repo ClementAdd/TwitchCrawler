@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <title>WEB CRAWLER - HOME</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <link href="./myapp/style/main.css" rel="stylesheet"/>
+    <link href="main.css" rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/axentix@1.2.1/dist/css/axentix.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
 </head>
 <body>
 
@@ -13,13 +15,28 @@
     <nav class="navbar shadow-1 primary">
         <a class="navbar-brand" href="/">Web-Crawler</a>
         <div class="navbar-menu ml-auto">
-            <a class="navbar-link" href="https://git.ytrack.learn.ynov.com/MPHERON/web-crawler" target="_blank">Gitea</a>
+            <a class="navbar-link" href="https://git.ytrack.learn.ynov.com/MPHERON/web-crawler"
+               target="_blank">Gitea</a>
             <a class="navbar-link" href="/about-us">About Us</a>
             <a class="navbar-link" href="/">Reload </a>
         </div>
     </nav>
 </header>
 <main>
+    <!--    <div class="row">-->
+    <!--        <div class="col s12 m7">-->
+    <!--            <div class="card">-->
+    <!--                <div class="card-image">-->
+    <!--                    <img src="./myapp/public/sample-1.jpg" alt="">-->
+    <!--                    <span class="card-title">Card Title</span>-->
+    <!--                </div>-->
+    <!--                <div class="card-content">-->
+    <!--                    <p>I am a very simple card. I am good at containing small bits of information.-->
+    <!--                        I am convenient because I require little markup to use effectively.</p>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
     <script>
 
         let xhr = new XMLHttpRequest();
@@ -32,51 +49,117 @@
                     let streamers = xhr.response
                     console.log(streamers);
                     let timeGetInfos = document.createElement("div")
+                    timeGetInfos.setAttribute('class', 'données')
                     timeGetInfos.textContent = "Heure de la récupération des données : " + streamers[0];
-                    timeGetInfos.style.fontSize = 24 + 'px'
                     document.body.appendChild(timeGetInfos)
+
+                    let container = document.createElement("div")
+                    container.setAttribute("class", "container")
+                    document.body.append(container)
                     for (let i = 1; i <= 30; i++) {
-                        document.body.appendChild(document.createElement("br"))
-                        let divStreamer = document.createElement("div")
-                        divStreamer.href = streamers[i].link
-                        divStreamer.target = "_blank"
-                        divStreamer.setAttribute('id', `stream-${i}`);
-                        // divStreamer.className = "card"
-                        document.body.appendChild(divStreamer)
 
-                        let nameStreamer = document.createElement("div")
-                        nameStreamer.textContent = `n°${i} : `+streamers[i].nameStreamer
-                        document.getElementById(`stream-${i}`).appendChild(nameStreamer)
+                        let bigDiv = document.createElement("div")
+                        bigDiv.setAttribute('class', `row-${i}`)
+                        bigDiv.setAttribute('id', `bigDiv`)
+                        container.appendChild(bigDiv)
 
-                        let title = document.createElement("div")
-                        title.textContent = streamers[i].title
-                        title.setAttribute('id', `title-${i}`);
-                        document.getElementById(`stream-${i}`).appendChild(title)
+                        let divStyle = document.createElement("div")
+                        divStyle.setAttribute('class', 'col s12 m7')
+                        bigDiv.appendChild(divStyle)
 
-                        let category = document.createElement("div")
-                        category.textContent = streamers[i].category
-                        document.getElementById(`stream-${i}`).appendChild(category)
+                        let cardContentTop = document.createElement("div")
+                        cardContentTop.setAttribute("class", "cardContentTop")
+                        bigDiv.appendChild(cardContentTop)
 
-                        let viewer = document.createElement("div")
-                        viewer.textContent = streamers[i].viewers
-                        document.getElementById(`stream-${i}`).appendChild(viewer)
+                        let cardImage = document.createElement("div")
+                        cardImage.setAttribute('class', 'card-image')
+                        bigDiv.appendChild(cardImage)
+
+                        let position = document.createElement("div")
+                        if (i === 1) {
+                            // position.textContent = "N°" + `${i}`
+                            let firstPlace = document.createElement("img")
+                            firstPlace.src = "myapp/ressources/1st-place-medal-emoji.png"
+                            cardContentTop.appendChild(firstPlace)
+                        } else {
+                            position.textContent = "N°" + `${i}`
+                            position.style.fontSize = 20 + "px"
+                            cardContentTop.appendChild(position)
+                        }
 
                         let pdp = document.createElement("img")
                         pdp.src = streamers[i].pdp
-                        document.getElementById(`stream-${i}`).appendChild(pdp)
+                        pdp.style.borderRadius = 6 + "px"
+                        cardContentTop.appendChild(pdp)
 
-                        let miniature = document.createElement("img")
+                        let nameStreamer = document.createElement("div")
+                        nameStreamer.textContent = streamers[i].nameStreamer
+                        nameStreamer.style.fontSize = 20 + "px"
+                        cardContentTop.appendChild(nameStreamer)
+
+                        let miniature = document.createElement('img')
                         miniature.src = streamers[i].miniature
-                        document.getElementById(`stream-${i}`).appendChild(miniature)
+                        cardImage.appendChild(miniature)
+
+                        let cardContent = document.createElement("div")
+                        cardContent.setAttribute('class', 'card-content')
+                        bigDiv.appendChild(cardContent)
+
+                        let title = document.createElement("div")
+                        title.textContent = streamers[i].title
+                        cardContent.appendChild(title)
+
+                        let category = document.createElement("div")
+                        category.textContent = streamers[i].category
+                        cardContent.appendChild(category)
+
+                        let viewers = document.createElement("div")
+                        viewers.textContent = streamers[i].viewers
+                        cardContent.appendChild(viewers)
+
+                        let link = document.createElement("div")
+                        link.href = streamers[i].link
+                        cardContent.appendChild(link)
+
+
+                        // document.body.appendChild(document.createElement("br"))
+                        // let divStreamer = document.createElement("div")
+                        // divStreamer.href = streamers[i].link
+                        // divStreamer.target = "_blank"
+                        // divStreamer.setAttribute('id', `stream-${i}`);
+                        // // divStreamer.className = "card"
+                        // document.body.appendChild(divStreamer)
+                        //
+                        // let nameStreamer = document.createElement("div")
+                        // nameStreamer.textContent = `n°${i} : `+streamers[i].nameStreamer
+                        // document.getElementById(`stream-${i}`).appendChild(nameStreamer)
+                        //
+                        // let title = document.createElement("div")
+                        // title.textContent = streamers[i].title
+                        // title.setAttribute('id', `title-${i}`);
+                        // document.getElementById(`stream-${i}`).appendChild(title)
+                        //
+                        // let category = document.createElement("div")
+                        // category.textContent = streamers[i].category
+                        // document.getElementById(`stream-${i}`).appendChild(category)
+                        //
+                        // let viewer = document.createElement("div")
+                        // viewer.textContent = streamers[i].viewers
+                        // document.getElementById(`stream-${i}`).appendChild(viewer)
+                        //
+                        // let pdp = document.createElement("img")
+                        // pdp.src = streamers[i].pdp
+                        // document.getElementById(`stream-${i}`).appendChild(pdp)
+                        //
+                        // let miniature = document.createElement("img")
+                        // miniature.src = streamers[i].miniature
+                        // document.getElementById(`stream-${i}`).appendChild(miniature)
                     }
                 }
             }
         };
         xhr.send(null);
     </script>
-
-    <p> Hello Guys, it's our Web Crawler!</p>
-
 
 </main>
 
