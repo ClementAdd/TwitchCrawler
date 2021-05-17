@@ -16,7 +16,7 @@
     <nav class="navbar shadow-1 viride dark-3">
         <a class="navbar-brand ml-5" href="/">Twitch Crawler</a>
         <a class="navbar-brand fab fa-twitch" href="https://twitch.tv/" style="margin-top: 2px"></a>
-        <a class="navbar-menu ml-auto fas fa-redo" href="/" style="margin-top: 5px"></a>
+        <a class="navbar-menu fas fa-redo" href="/" style="margin-top: 5px; margin-left: auto"></a>
         <div class="navbar-menu ml-auto">
             <a class="navbar-link" href="https://git.ytrack.learn.ynov.com/MPHERON/web-crawler"
                target="_blank">Gitea</a>
@@ -48,24 +48,24 @@
                     document.body.append(container)
                     for (let i = 1; i <= 30; i++) {
 
-                        let cardStream = document.createElement("a")
-                        cardStream.href = streamers[i].link
-                        cardStream.target = "_blank"
-                        cardStream.setAttribute('class', `row-${i}`)
-                        cardStream.setAttribute('id', `bigDiv`)
-                        container.appendChild(cardStream)
+                        let bigDiv = document.createElement("a")
+                        bigDiv.href = streamers[i].link
+                        bigDiv.target = "_blank"
+                        bigDiv.setAttribute('class', `row-${i}`)
+                        bigDiv.setAttribute('id', `bigDiv`)
+                        container.appendChild(bigDiv)
 
                         let divStyle = document.createElement("div")
                         divStyle.setAttribute('class', 'col s12 m7')
-                        cardStream.appendChild(divStyle)
+                        bigDiv.appendChild(divStyle)
 
                         let cardContentTop = document.createElement("div")
                         cardContentTop.setAttribute("class", "cardContentTop")
-                        cardStream.appendChild(cardContentTop)
+                        bigDiv.appendChild(cardContentTop)
 
                         let cardImage = document.createElement("div")
                         cardImage.setAttribute('class', 'card-image')
-                        cardStream.appendChild(cardImage)
+                        bigDiv.appendChild(cardImage)
 
                         let position = document.createElement("div")
                         if (i === 1) {
@@ -111,7 +111,7 @@
 
                         let cardContent = document.createElement("div")
                         cardContent.setAttribute('class', 'card-content')
-                        cardStream.appendChild(cardContent)
+                        bigDiv.appendChild(cardContent)
 
                         let title = document.createElement("div")
                         title.textContent = streamers[i].title

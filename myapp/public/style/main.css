@@ -22,7 +22,7 @@ footer {
     margin-top: 60px !important;
     border-width: 2px;
     border-style:inset;
-    width: 442px;
+    width: 30%;
     height: 500px;
     box-shadow: 10px 5px 5px grey;
     border-radius: 6px;
@@ -30,9 +30,9 @@ footer {
     background-color: darkorchid;
 }
 .cardContentTop {
-    margin-left: auto !important;
-    margin-right: auto !important;
-    width: 440px;
+    /*margin-left: auto !important;*/
+    /*margin-right: auto !important;*/
+    /*width: 440px;*/
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -44,8 +44,8 @@ footer {
 .card-content {
     margin-left: auto !important;
     margin-right: auto !important;
-    width: 440px;
-    height: 150px;
+    /*width: 440px;*/
+    /*height: 150px;*/
     margin-top: 15px;
     border-top-width: 4px;
     border-top-style:inset;
@@ -53,11 +53,16 @@ footer {
     color: white;
     padding: 15px;
 }
-.card-image {
-    margin-left: auto !important;
-    margin-right: auto !important;
-    width: 440px;
+.card-image img {
 
+    width: 100%;
+
+}
+
+.text-link {
+    color: red;
+    font-size: 150%;
+    font-weight: bold;
 }
 
 .données {
