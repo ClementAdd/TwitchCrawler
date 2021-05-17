@@ -20,9 +20,10 @@
   },
   "description": "",
   "scripts": {
-    "start": "ts-node src/index.ts",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+
   "repository": {
     "type": "git",
     "url": "https://git.ytrack.learn.ynov.com/MPHERON/web-crawler"
