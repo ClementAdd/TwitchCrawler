@@ -2,7 +2,7 @@
     const express = require('express');
     const path = require('path');
     const app = express();
-    const PORT = process.env.port||'8080';
+    const port = process.env.port||'8080';
 
     const main = require("./main");
     let streamers = await main.getStats();
