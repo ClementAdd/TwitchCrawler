@@ -1,27 +1,6 @@
 {
   "name": "web-crawler",
   "version": "0.0.0",
-  "main": "main.js",
-  "homepage": "https://git.ytrack.learn.ynov.com/MPHERON/web-crawler",
-  "contributors": [
-    "Clement Adarrio",
-    "Brahim Ganoui",
-    "Mathieu PHERON"
-  ],
-  "dependencies": {
-    "axentix": "^1.2.1",
-    "express": "^4.17.1",
-    "node-fetch": "^2.6.1",
-    "puppeteer": "^9.0.0",
-    "puppeteer-core": "^9.0.0",
-    "request": "2.88.2",
-    "ts-node": "^9.1.1",
-    "typescript": "^4.2.4"
-  },
-  "description": "",
-{
-  "name": "web-crawler",
-  "version": "0.0.0",
   "main": "myapp/main.js",
   "homepage": "https://git.ytrack.learn.ynov.com/MPHERON/web-crawler",
   "contributors": [
@@ -41,21 +20,10 @@
     "ws": "^7.4.5"
   },
   "description": "",
-
   "scripts": {
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://git.ytrack.learn.ynov.com/MPHERON/web-crawler"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
-}
-
-
   "repository": {
     "type": "git",
     "url": "https://git.ytrack.learn.ynov.com/MPHERON/web-crawler"
