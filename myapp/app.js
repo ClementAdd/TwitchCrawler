@@ -2,7 +2,7 @@
     const express = require('express');
     const path = require('path');
     const app = express();
-    const port = 8080;
+    const port = process.env.PORT || '8080';
 
     const main = require("./main");
     let streamers = await main.getStats();
@@ -32,7 +32,7 @@
         res.status(404).sendFile(path.join(__dirname, './public/404NotFound.html'));
     });
 
-    app.listen(process.env.PORT || port, () => {
+    app.listen(port, () => {
         console.log(`Example app listening at http://localhost:${port}`);
     });
 
